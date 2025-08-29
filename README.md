@@ -2,11 +2,7 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
 
 <p align="center">
     <br>
-        <img width=100% src="docs/idle.png" alt="idle" />
-        <img width=100% src="docs/work.png" alt="work" />
-        <img width=100% src="docs/break.png" alt="break" />
-        <img width=100% src="docs/break_long.png" alt="break_long" />
-        <img width=100% src="docs/bartimer.png" alt="bartimer" />
+        <img width=70% src="docs/polybar_pomodoro.png" alt="" /> 
     <br>
 </p>
 
@@ -25,11 +21,11 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
     - Click controls: start/pause,  reset, skip
     - Desktop notifications
     - Sound alerts
-- bartimer (last picture above)
+<!-- - bartimer (last picture above)
     - Simple timer
     - Click controls: start/pause,  reset
     - Notify you every 10 minutes
-    - Change color to more red every 20 minutes
+    - Change color to more red every 20 minutes -->
 
 ## Installation
 
