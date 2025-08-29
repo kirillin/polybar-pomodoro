@@ -2,23 +2,34 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
 
 <p align="center">
     <br>
-        <img width=100% src="docs/pomodoro_work___.png" alt="logo_simq" />
-        <img width=100% src="docs/pomodoro_break___.png" alt="logo_simq" />
+        <img width=100% src="docs/idle.png" alt="idle" />
+        <img width=100% src="docs/work.png" alt="work" />
+        <img width=100% src="docs/break.png" alt="break" />
+        <img width=100% src="docs/break_long.png" alt="break_long" />
+        <img width=100% src="docs/bartimer.png" alt="bartimer" />
     <br>
 </p>
 
 ## Features
 
-- format: [completed_pomodoros time] see pictures above on the left
-    - [ 0 24:40 ] - work
-    - [ 0 00:04 ] - break
-- 25-minute work sessions
-- 5-minute short breaks
-- 15-minute long breaks after 4 pomodoros
-- Color-coded display (orange for work, green for breaks)
-- Click controls: start/pause,  reset, skip
-- Desktop notifications
-- Sound alerts
+- pomodoro
+    - format: `[completed_pomodoros current_pomodoro time]` see pictures above
+        - [      00:00 ] - idle
+        - [    ◔ 08:13 ] - work
+        - [    ◑ 02:42 ] - break
+        - [ ●● ◔ 07:50] - completed two pomodoros
+    - 25-minute work sessions
+    - 5-minute short breaks
+    - 15-minute long breaks after 4 pomodoros
+    - Color-coded display (orange for work, green for break, blue for long break)
+    - Click controls: start/pause,  reset, skip
+    - Desktop notifications
+    - Sound alerts
+- bartimer (last picture above)
+    - Simple timer
+    - Click controls: start/pause,  reset
+    - Notify you every 10 minutes
+    - Change color to more red every 20 minutes
 
 ## Installation
 
