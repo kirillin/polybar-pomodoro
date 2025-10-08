@@ -8,7 +8,7 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
 
 ## Features
 
-- pomodoro
+- **pomodoro**
     - format: `[completed_pomodoros current_pomodoro time]` see pictures above
         - [      00:00 ] - idle
         - [    ◔ 08:13 ] - work
@@ -21,11 +21,11 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
     - Click controls: start/pause,  reset, skip
     - Desktop notifications
     - Sound alerts
-<!-- - bartimer (last picture above)
-    - Simple timer
+- [NEW FEATURE] **stopwatch** (like in leetcode.com)
+    - it just increses time from 00:00:00
     - Click controls: start/pause,  reset
     - Notify you every 10 minutes
-    - Change color to more red every 20 minutes -->
+    - Change color to more red every 20 minutes
 
 ## Installation
 
@@ -43,6 +43,8 @@ git clone https://github.com/kirillin/polybar-pomodoro.git
 
 2. Add module to Polybar `~/.config/polybar/config`
 
+
+- for pomodoro module
 ```
 [module/pomodoro]
 type = custom/script
@@ -53,10 +55,34 @@ click-right = python3 ~/polybar-pomodoro/pomodoro.py skip
 tail = true
 ```
 
+- for stopwatch module
+```
+[module/stopwatch]
+type = custom/script
+exec = python3 python3 ~/polybar/polybar-pomodoro/stopwatch.py
+click-left = python3 ~/polybar/polybar-pomodoro/stopwatch.py toggle
+click-right = python3 ~/polybar/polybar-pomodoro/stopwatch.py reset
+tail = true
+interval = 1
+```
+
 ## Usage
 
-- Left click: Start/pause timer
+- pomodoro
 
-- Middle click: Reset timer
+    - Left click: Start/pause timer
 
-- Right click: Skip current period
+    - Middle click: Reset timer
+
+    - Right click: Skip current period
+
+- stopwatch
+
+    - Left click: Start/pause timer
+    - Right click: Reset
+
+## Changelog
+
+- 08.10.2025
+    - add stopwatch module
+    - change sound for the end of a pomodoro to to multiple times play

@@ -34,14 +34,18 @@ class SystemSound(Enum):
     DIALOG_WARNING = "dialog-warning"
     DIALOG_ERROR = "dialog-error"
 
-def play_sound(sound: SystemSound):
+def play_sound(sound: SystemSound, times=1):
     try:
-        subprocess.Popen(["canberra-gtk-play", "-i", sound.value])
+        for _ in range(times):
+            subprocess.Popen(["canberra-gtk-play", "-i", sound.value])
+            time.sleep(0.2)
     except FileNotFoundError:
-        subprocess.Popen([
-            "paplay",
-            "/usr/share/sounds/freedesktop/stereo/complete.oga"
-        ])
+        for _ in range(times):
+            subprocess.Popen([
+                "paplay",
+                "/usr/share/sounds/freedesktop/stereo/complete.oga"
+            ])
+            time.sleep(0.2)
 
 def read_state():
     if os.path.exists(STATE_FILE):
@@ -132,7 +136,7 @@ def main():
             write_time(0)
             write_state("idle")
             write_pomodoro_count(0)
-            play_sound(SystemSound.DIALOG_WARNING)
+            play_sound(SystemSound.DIALOG_WARNING, 3)
             message = "Reset!"
             send_notification("RESET clicked")
         elif sys.argv[1] == "skip":
@@ -158,7 +162,7 @@ def main():
         write_time(seconds)
         
         if seconds >= period_duration:
-            play_sound(SystemSound.COMPLETE)
+            play_sound(SystemSound.COMPLETE, 5)
             
             if current_period_type == "pomodoro":
                 message = "Time to break. Ask yourself: 'Are you ready spend next pomodoro to THIS task?'"
