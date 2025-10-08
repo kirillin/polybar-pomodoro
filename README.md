@@ -31,8 +31,16 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
 
 1. Dependancies
 
+- Ubuntu/Debian
+
+```bash
+sudo apt install python3-notify2 libcanberra-gtk3-module
 ```
-Python 3, notify2, polybar, [optional] libcanberr 
+
+- Arch Linux
+
+```bash
+sudo pacman -S python3-notify2 libcanberra
 ```
 
 1. Clone the repository
@@ -65,21 +73,16 @@ click-right = python3 ~/polybar/polybar-pomodoro/stopwatch.py reset
 tail = true
 interval = 1
 ```
+3. Restart polybar
+
+```bash
+polybar-msg cmd restart
+```
 
 ## Usage
 
-- pomodoro
-
-    - Left click: Start/pause timer
-
-    - Middle click: Reset timer
-
-    - Right click: Skip current period
-
-- stopwatch
-
-    - Left click: Start/pause timer
-    - Right click: Reset
+- **pomodoro**: Left-click start/pause, Middle-click reset, Right-click skip
+- **stopwatch**: Left-click start/pause, Right-click reset
 
 ## Changelog
 
