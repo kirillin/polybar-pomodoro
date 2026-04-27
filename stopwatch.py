@@ -8,17 +8,17 @@ import subprocess
 from datetime import datetime
 from enum import Enum
 
-STATE_FILE = "/tmp/polybar_timer_state"
-TIME_FILE = "/tmp/polybar_timer_time"
+STATE_FILE = "/tmp/stopwatch_timer_state"
+TIME_FILE = "/tmp/stopwatch_timer_time"
 NOTIFY_INTERVAL = 10
 CYCLE_MINUTES = 20
 
-IDLE_COLOR = "#555555"
+IDLE_COLOR = "#999999"
 COLORS = {
-    "0-20": "#A3BE8C",
-    "20-40": "#ffBE8C",
-    "40-60": "#ff9977",
-    "60+": "#ff5533"
+    "0-20": "#FFBE00",
+    "20-40": "#FFAE00",
+    "40-60": "#FF8E00",
+    "60+": "#FF5E00"
 }
 
 FILLED_CHAR = "▮"

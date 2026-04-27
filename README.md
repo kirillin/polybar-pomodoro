@@ -1,4 +1,4 @@
-The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar).
+[Polybar](https://github.com/polybar/polybar)'s time management timers (pomodoro, stopwatch, timer) is an applet.
 
 <p align="center">
     <br>
@@ -21,11 +21,18 @@ The Pomodoro timer is an applet for [Polybar](https://github.com/polybar/polybar
     - Click controls: start/pause,  reset, skip
     - Desktop notifications
     - Sound alerts
-- [NEW FEATURE] **stopwatch** (like in leetcode.com)
-    - it just increses time from 00:00:00
+- **stopwatch** (like in leetcode.com)
+    - It is just increses time from 00:00:00
     - Click controls: start/pause,  reset
     - Notify you every 10 minutes
     - Change color to more red every 20 minutes
+- [NEW FEATURE] **timer** - 
+    - It is just decreases time fron initial one
+    - Click controls:
+        - right click - add 10 minutes (00:10:00, 00:20:00, 00:30:00, etc.)
+        - middle click - reset to 00:00:00
+        - left click - start timer
+    - When timer come to 00:00:00 it starts flashing red/blue
 
 ## Installation
 
@@ -73,6 +80,20 @@ click-right = python3 ~/polybar/polybar-pomodoro/stopwatch.py reset
 tail = true
 interval = 1
 ```
+
+- for timer module
+```
+[module/timer]
+type = custom/script
+exec = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py
+click-left = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py start
+click-right = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py add
+click-middle = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py reset
+tail = true
+interval = 1
+label = %output%
+```
+
 3. Restart polybar
 
 ```bash
@@ -83,9 +104,13 @@ polybar-msg cmd restart
 
 - **pomodoro**: Left-click start/pause, Middle-click reset, Right-click skip
 - **stopwatch**: Left-click start/pause, Right-click reset
+- **timer**: Left-click start/pause, Middle-click reset, Right-click add 10 minutes
+
 
 ## Changelog
 
+- 27.04.2026
+    - add timer module
 - 08.10.2025
     - add stopwatch module
     - change sound for the end of a pomodoro to to multiple times play
