@@ -74,7 +74,7 @@ tail = true
 ```
 [module/stopwatch]
 type = custom/script
-exec = python3 python3 ~/polybar/polybar-pomodoro/stopwatch.py
+exec = python3 ~/polybar/polybar-pomodoro/stopwatch.py
 click-left = python3 ~/polybar/polybar-pomodoro/stopwatch.py toggle
 click-right = python3 ~/polybar/polybar-pomodoro/stopwatch.py reset
 tail = true
