@@ -85,10 +85,10 @@ interval = 1
 ```
 [module/timer]
 type = custom/script
-exec = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py
-click-left = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py start
-click-right = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py add
-click-middle = python3 /home/kika/.config/polybar/polybar-pomodoro/timer.py reset
+exec = python3 ~/polybar-pomodoro/timer.py
+click-left = python3 ~/polybar-pomodoro/timer.py start
+click-right = python3 ~/polybar-pomodoro/timer.py add
+click-middle = python3 ~/polybar-pomodoro/timer.py reset
 tail = true
 interval = 1
 label = %output%
